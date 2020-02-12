@@ -1,0 +1,12 @@
+[
+  {
+    "directory": "/home/lxmcf/Documents/Projects/build",
+    "command": "valac -C --debug --debug --vapidir /home/lxmcf/Documents/Projects/vapi /home/lxmcf/Documents/Projects/vapi/sdl2-gfx.vapi /home/lxmcf/Documents/Projects/vapi/sdl2.vapi --pkg gobject-2.0 --pkg glib-2.0 --color=always --directory vgl_test@exe --basedir ../ ../src/main.vala",
+    "file": "../src/main.vala"
+  },
+  {
+    "directory": "/home/lxmcf/Documents/Projects/build",
+    "command": "cc -Ivgl_test@exe -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -w -g  -MD -MQ 'vgl_test@exe/meson-generated_src_main.c.o' -MF 'vgl_test@exe/meson-generated_src_main.c.o.d' -o 'vgl_test@exe/meson-generated_src_main.c.o' -c 'vgl_test@exe/src/main.c'",
+    "file": "vgl_test@exe/src/main.c"
+  }
+]
