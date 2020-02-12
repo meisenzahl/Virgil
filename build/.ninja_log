@@ -1,4 +1,0 @@
-# ninja log v5
-0	71	1581469449	vgl_test@exe/src/main.c	14d6965b77108daf
-71	351	1581469450	vgl_test@exe/meson-generated_src_main.c.o	8e0f25bb5218e7d9
-351	412	1581469450	vgl_test	cf8794ae6d4c2d80
