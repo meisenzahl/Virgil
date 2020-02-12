@@ -1,4 +1,4 @@
-project ('virgil', ['vala', 'c'], version: '0.0.1')
+project ('vgl_test', ['vala', 'c'], version: '0.0.1')
 
 add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
 
@@ -16,4 +16,4 @@ sdl2gfx_dep = declare_dependency(dependencies: [ sdl2gfx_lib, sdl2gfx_vapi])
 
 subdir('src')
 
-executable(meson.project_name(), sources, dependencies: [glib, gobject, sdl2_dep, sdl2gfx_dep,dependency('gtk+-3.0')])
+executable('vgl_test', sources, dependencies: [glib, gobject, sdl2_dep, sdl2gfx_dep,dependency('gtk+-3.0')])

@@ -7,7 +7,7 @@ public class VGL {
 
     private const int REFRESH_DELAY = 1000;
 
-    private int timer = 10;
+    private int timer = 30;
 
     private SDL.Video.Window window;
     private SDL.Video.Renderer? renderer;
@@ -19,8 +19,6 @@ public class VGL {
             render ();
 
             SDL.Timer.delay (REFRESH_DELAY);
-
-            print("Closing Application in " + timer.to_string () + "\n");
 
             timer -= 1;
         }
@@ -40,9 +38,13 @@ public class VGL {
         int16 x = (int16)width / 2;
         int16 y = (int16)height / 2;
 
-        Rectangle.fill_color (this.renderer, 0, 0, 640, 360, convert_rgb_to_uint32 (88, 151, 233, 255));
+        uint32 colour = uint32.MAX;
 
-        Circle.fill_color (this.renderer, x, y, 100, convert_rgb_to_uint32 (255, 255, 255, 255));
+        Rectangle.fill_color (this.renderer, 0, 0, 640, 360, get_colour(88, 151, 233, 255));
+
+        //0xFF000000
+
+        Circle.fill_color (this.renderer, x, y, 100, colour);
         renderer.present ();
     }
 
@@ -57,7 +59,7 @@ public class VGL {
         return 0;
     }
 
-    private uint32 convert_rgb_to_uint32 (int r, int g, int b, int a) {
+    private uint32 get_colour (int r, int g, int b, int a) {
         uint32 colour = ((uint32)a << 24) + ((uint32)b << 16) + ((uint32)g << 8) + ((uint32)r);
 
         return colour;
