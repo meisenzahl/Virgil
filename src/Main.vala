@@ -4,5 +4,7 @@ public static int main (string[] args) {
     var game = new DrawCircleExample ();
     game.run ();
 
+    SDL.quit ();
+
     return 0;
 }
