@@ -10,6 +10,8 @@ namespace Virgil.Engine {
         public int window_height;
         public string window_title;
 
+        public bool running;
+
         public Window window;
         public Renderer? renderer;
 
@@ -18,12 +20,26 @@ namespace Virgil.Engine {
             window_height = height;
             window_title = title;
 
+            running = true;
+
             window = new Window (window_title, Window.POS_CENTERED, Window.POS_CENTERED, window_width, window_height, WindowFlags.SHOWN);
             renderer = Video.Renderer.create (window, -1, RendererFlags.ACCELERATED | RendererFlags.PRESENTVSYNC);
         }
 
-        public void run () { }
+        public virtual void run () { }
 
-        public void draw () { }
+        public virtual void draw () { }
+
+        public void events () {
+            Event event;
+
+            while (Event.poll (out event) == 1) {
+                switch (event.type) {
+                    case EventType.QUIT:
+                        running = false;
+                    break;
+                }
+            }
+        }
     }
 }
