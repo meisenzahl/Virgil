@@ -15,18 +15,30 @@ namespace Virgil.Engine {
         public Window window;
         public Renderer? renderer;
 
-        public void initialise (int width, int height, string title) {
-            window_width = width;
-            window_height = height;
-            window_title = title;
+        public FramerateManager framerate;
+
+        public void initialise (int window_width, int window_height, string window_title) {
+            this.window_width = window_width;
+            this.window_height = window_height;
+            this.window_title = window_title;
 
             running = true;
 
             window = new Window (window_title, Window.POS_CENTERED, Window.POS_CENTERED, window_width, window_height, WindowFlags.SHOWN);
-            renderer = Video.Renderer.create (window, -1, RendererFlags.ACCELERATED | RendererFlags.PRESENTVSYNC);
+            renderer = Renderer.create (window, -1, RendererFlags.ACCELERATED | RendererFlags.PRESENTVSYNC);
+            framerate = FramerateManager();
+            framerate.init ();
         }
 
-        public virtual void run () { }
+        public void run () {
+            framerate.run ();
+
+            events ();
+            update ();
+            draw ();
+        }
+
+        public virtual void update () { }
 
         public virtual void draw () { }
 
