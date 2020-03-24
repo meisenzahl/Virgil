@@ -5,6 +5,7 @@ Virgil is a basic 2D game engine built using SDL2 and designed for Linux and dir
 ### Dependencies
 
 - `glib-2.0`
+- `gobject-2.0`
 - `libsdl2-dev`
 - `libsdl2-gfx-dev`
 - `libsdl2-image-dev`
@@ -18,6 +19,6 @@ Virgil is a basic 2D game engine built using SDL2 and designed for Linux and dir
 ```sh
 meson build
 cd build
-ninja
+ninja install
 ./virgil
 ```
