@@ -1,7 +1,7 @@
 public static int main (string[] args) {
     SDL.init (SDL.InitFlag.EVERYTHING);
 
-    var game = new DrawCircleExample ();
+    var game = new TestProject ();
 
     while (game.running) {
         game.run ();
