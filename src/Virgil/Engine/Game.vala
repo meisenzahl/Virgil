@@ -13,7 +13,7 @@ namespace Virgil.Engine {
         public bool running;
 
         public Window window;
-        public Renderer? renderer;
+        public static Renderer? renderer;
 
         public FramerateManager framerate;
 
@@ -49,6 +49,10 @@ namespace Virgil.Engine {
                 switch (event.type) {
                     case EventType.QUIT:
                         running = false;
+                    break;
+
+                    case EventType.KEYDOWN:
+
                     break;
                 }
             }
