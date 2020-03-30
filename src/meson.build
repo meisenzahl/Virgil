@@ -1,7 +1,4 @@
-sources = files (
-    # Main
-    'Main.vala',
-
+lib_sources = files (
     # Engine
     'Virgil/Engine/Game.vala',
 
@@ -12,6 +9,11 @@ sources = files (
     'Virgil/Graphics/Draw.vala',
     'Virgil/Graphics/Sprite.vala',
     'Virgil/Graphics/Draw.vala',
+)
+
+exe_sources = files (
+    # Main
+    'Main.vala',
 
     # Example
     'Example/TestProject.vala'

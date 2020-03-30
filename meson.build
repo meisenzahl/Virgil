@@ -28,4 +28,16 @@ subdir('src')
 
 install_subdir('assets', install_dir: join_paths(meson.current_source_dir(), 'build'))
 
-executable(meson.project_name(), sources, dependencies: [lib, vapi])
+dependencies = [
+    lib,
+    vapi
+]
+
+virgil_lib = shared_library(
+    meson.project_name(),
+    lib_sources,
+    dependencies : dependencies,
+    install : true
+)
+
+executable(meson.project_name(), exe_sources, dependencies: dependencies, link_with : virgil_lib)
